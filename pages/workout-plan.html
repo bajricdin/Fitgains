@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid d-flex justify-content-center align-items-center">
+                <!-- Left Links -->
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="workout-plan.html">Workout Plan</a>
+                    </li>
+                </ul>
+    
+                <!-- Logo Centered -->
+                <img class="navbar-brand mx-3" src="../images/logo.png"></a>
+    
+                <!-- Right Links -->
+                <ul class="navbar-nav d-flex flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="about-us-page.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="contact-page.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Workout Plan Form -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Generate Your Workout Plan</h1>
+        <form id="workoutForm" class="mb-5">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" id="age" class="form-control" placeholder="Enter your age" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="fitnessLevel" class="form-label">Fitness Level</label>
+                <select id="fitnessLevel" class="form-select" required>
+                    <option value="">Select</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="goal" class="form-label">Fitness Goal</label>
+                <input type="text" id="goal" class="form-control" placeholder="e.g., Build Muscle, Lose Weight" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Plan</button>
+        </form>
+
+        <!-- Workout Plan Table -->
+        <div id="workoutPlanContainer" class="d-none">
+            <h2 class="text-center">Your Personalized Workout Plan</h2>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Workout</th>
+                        <th>Reps/Sets</th>
+                    </tr>
+                </thead>
+                <tbody id="workoutTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
