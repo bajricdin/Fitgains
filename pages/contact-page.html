@@ -8,35 +8,74 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid d-flex justify-content-center align-items-center">
-                <!-- Left Links -->
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="workout-plan.html">Workout Plan</a>
-                    </li>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid center">
+            <!-- Desktop Navbar -->
+            <div class="desktop-navbar d-none d-lg-flex justify-content-center align-items-center w-100">
+              <!-- Left Links -->
+              <div class="navbar-left">
+                <ul class="navbar-nav d-flex">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="link-workout" href="workout-plan.html">Workout Plan</a>
+                  </li>
                 </ul>
-    
-                <!-- Logo Centered -->
-                <img class="navbar-brand mx-3" src="../images/logo.png"></a>
-    
-                <!-- Right Links -->
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="about-us-page.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3" href="contact-page.html">Contact</a>
-                    </li>
+              </div>
+      
+              <!-- Centered Logo -->
+              <a class="navbar-brand" href="#">
+                <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
+              </a>
+      
+              <!-- Right Links -->
+              <div class="navbar-right">
+                <ul class="navbar-nav d-flex">
+                  <li class="nav-item">
+                    <a class="nav-link" href="about-us-page.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="last-link" href="contact-page.html">Contact</a>
+                  </li>
                 </ul>
+              </div>
             </div>
+      
+            <!-- Mobile Navbar -->
+            <div class="mobile-navbar d-lg-none">
+              <!-- Mobile Logo -->
+              <a class="navbar-brand" href="#">
+                <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
+              </a>
+      
+              <!-- Toggler Button -->
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <!-- Collapsed Links -->
+              <div class="collapse navbar-collapse" id="navbar1">
+                <ul class="navbar-nav d-flex flex-column text-center">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="workout-plan.html">Workout Plan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about-us-page.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact-page.html">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </nav>
-    </header>
+      </header>
 
     <!-- Contact Form -->
     <div class="container my-5">
