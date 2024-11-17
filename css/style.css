@@ -1,9 +1,10 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white
+    background-color: white;
 }
 
 /* Navbar*/
@@ -70,7 +71,7 @@ body {
 
     .mobile-navbar {
       display: flex;
-      justify-content: space-between; /* Ensure logo and button are next to each other */
+      justify-content: space-between;
       align-items: center;
       width: 100%;
     }
@@ -80,7 +81,7 @@ body {
     }
   
     .navbar-toggler {
-      margin-left: auto; /* Push the toggle button to the right */
+      margin-left: auto;
     }
   
     .navbar-collapse {
@@ -89,11 +90,11 @@ body {
       align-items: center;
       width: 100%;
       padding: 10px 0;
-      position: absolute; /* Position it under the logo and collapse button */
-      top: 100%; /* Ensure it expands below */
+      position: absolute;
+      top: 100%; 
       left: 0;
-      background-color: black; /* Ensure background matches navbar */
-      z-index: 1000; /* Bring it above other content */
+      background-color: black; 
+      z-index: 1001; 
     }
   
     .navbar-nav {
@@ -120,16 +121,228 @@ body {
   
 
 /* Hero Section */
-.hero {
-    background-image: url('../images/fitman.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.carousel-item img{
+    height: 90vh;
+    scale: 1.01;
+    object-fit: cover;
+    overflow-x: hidden;
 }
+
+.hero-text{
+    position: absolute;
+    z-index: 1000;
+    top: 40%;
+    left: 50%;
+    text-align: center;  
+    font-weight: 700;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.hero-text {
+    position: absolute;
+    z-index: 1000;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    
+    
+}
+
+.hero-text h2{
+    font-size: 4rem;
+    font-weight: 800;
+}
+.hero-text h1{
+    font-size: 5rem;
+    font-weight: 600;
+    transform: translateY(-20px);
+}
+.hero-text a{
+    padding: 12px 20px;
+    background-color: black;
+    color: white;
+    border-left: 2px solid #e16521;
+    border-right: 2px solid #e4381C;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px #FF7B07;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.primary-btn:hover{
+    background-color: #e16521;
+    transition: ease 0.7s;
+}
+.carousel-inner{
+    position: relative;
+}
+.second-img{
+    transform: translateY(-100px);
+    background-color: black;
+    background-attachment: fixed;
+}   
+.carousel-item{
+    background-color: black;
+}
+.carousel-inner{
+    object-fit: cover; 
+}
+
+
+/* Large Screens (Desktops) */
+@media (min-width: 1200px) {
+    .second-img{
+        transform: translateY(0);
+    }
+    .first-img{
+        transform: translateY(0px);
+        object-position: top;
+    }
+    .hero-text {
+        top: 60%;
+    }
+
+    .hero-text h2 {
+        font-size: 4rem;
+    }
+
+    .hero-text h1 {
+        font-size: 5rem;
+    }
+
+    .hero-text a {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Medium-Large Screens (Laptops) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hero-text {
+        top: 55%;
+    }
+
+    .hero-text h2 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-text a {
+        font-size: 1.1rem;
+        padding: 10px 18px;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .carousel-item img {
+        height: 70vh;
+    }
+
+    .hero-text {
+        top: 60%;
+    }
+
+    .hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+
+    .hero-text a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+    .second-img{
+        transform: translateY(-80px);
+    }
+}
+
+/* Small Screens (Mobile Large) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .carousel-item img {
+        height: 60vh; 
+    }
+
+    .hero-text {
+        top: 55%;
+    }
+
+    .hero-text h2 {
+        font-size: 2.0rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3.0rem;
+    }
+
+    .hero-text a {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+    .second-img{
+        transform: translateY(-60px);
+    }
+}
+
+/* Very Small Screens (Mobile Medium) */
+@media (max-width: 575px) and (min-width: 400px) {
+    .carousel-item img {
+        height: 50vh; 
+    }
+
+    .hero-text {
+        top: 60%;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text a {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+    .second-img{
+        transform: translateY(-50px);
+    }
+}
+
+/* Extra Small Screens (Mobile Small) */
+@media (max-width: 399px) {
+    .hero-text {
+        width: 85%; 
+    }
+    .hero-text {
+        top: 50%;
+    }
+    h2, h1 {
+        word-wrap: break-word; 
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text a {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+}
+
 
 /* Footer */
 footer {
