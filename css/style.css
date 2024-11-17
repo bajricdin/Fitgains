@@ -367,7 +367,7 @@ body {
 
 .section-description {
     font-size: 1.2rem;
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 20px;
     color: white;
     line-height: 1.6;
 }
@@ -380,7 +380,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 }
 
 .video-wrapper iframe {
@@ -411,11 +411,160 @@ body {
         font-size: 0.9rem;
     }
 }
+/* Why Fitgains Section */
+.why-fitgains {
+    padding: 80px 0;
+    background-color: black;
+    color: white;
+}
+
+.why-fitgains .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-fitgains .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.why-fitgains .section-subtitle {
+    font-size: 1.3rem;
+    color: #e16521;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.why-fitgains .section-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.why-fitgains .feature-list {
+    list-style-type: none;
+    padding-left: 80px;
+    font-size: 1.1rem;
+    color: #e16521;
+    text-align: left;
+}
+
+.why-fitgains .feature-list li {
+    margin-bottom: 15px;
+    font-weight: 500;
+    position: relative;
+}
+
+.why-fitgains .feature-list li::before {
+    content: "\2022";
+    color: #e16521;
+    font-size: 1.8rem;
+    position: absolute;
+    left: -25px;
+    top: -2px;
+}
+
+.why-fitgains .img-fluid {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.why-fitgains .img-fluid:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .why-fitgains .section-title {
+        font-size: 2.5rem;
+    }
+
+    .why-fitgains .section-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .why-fitgains .section-description {
+        font-size: 1rem;
+    }
+
+    .why-fitgains .feature-list li {
+        font-size: 1rem;
+    }
+
+    .why-fitgains .feature-list {
+        font-size: 1rem;
+        padding-left: 50px;
+    }
+
+    .why-fitgains .row {
+        flex-direction: column;
+    }
+
+    .why-fitgains .col-md-6 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Google Maps Section */
+.google-maps-section {
+    padding: 80px 0;
+    background-color: black;
+    text-align: center;
+}
+
+.google-maps-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.google-maps-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.google-maps-section .section-description {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.google-maps-section .map-wrapper {
+    width: 100%;
+    height: 450px;
+    max-width: 100%;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.map{
+    filter: grayscale(50%) invert(97%) contrast(93%);
+}
+
+@media (max-width: 768px) {
+    .google-maps-section .section-title {
+        font-size: 2.5rem;
+    }
+
+    .google-maps-section .section-description {
+        font-size: 1.1rem;
+    }
+}
 
 /* Footer */
 footer {
     background-color: black;
-    position: fixed;
+    position: static;
     bottom: 0;
     width: 100%;
 }
