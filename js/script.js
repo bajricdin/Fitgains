@@ -77,6 +77,7 @@ function generatePlan() {
         });
 }
 
+// Interactive modal with dynamic content of bodybuilders
 document.querySelectorAll('.gallery-img').forEach(img => {
     img.addEventListener('click', () => {
         const modalImage = document.getElementById('modalImage');
@@ -114,5 +115,4 @@ thumbnails.forEach(thumbnail => {
         document.getElementById("modalAchievements").textContent = bodybuilder.achievements || "Achievements not found.";
     });
 });
-
 
