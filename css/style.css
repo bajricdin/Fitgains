@@ -560,7 +560,128 @@ body {
         font-size: 1.1rem;
     }
 }
+/* Interactive Gallery */
+.gallery-section {
+    background-color: #000;
+    padding: 40px 0;
+}
 
+.gallery-section h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.gallery-img {
+    cursor: pointer;
+    width: 100%;
+    height: 450px; 
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.1);
+}
+
+.builders {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 30px;
+}
+/* Modal Styling */
+.modal-content {
+    background-color: #000;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.modal-body {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.modal-img-container {
+    max-width: 40%;
+}
+
+.modal-img-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.modal-info {
+    max-width: 60%;
+}
+
+.modal-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    border-top: 1px solid #333;
+    padding: 15px;
+}
+#modalName{
+    color: #e16521;
+}
+@media (max-width: 768px) {
+    .modal-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;  
+    }
+
+    .modal-img-container {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .modal-info {
+        max-width: 80%;
+    }
+
+    .modal-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .modal-info p {
+        font-size: 1rem;
+    }
+
+    .modal-info h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-info h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-info p {
+        font-size: 0.9rem;
+    }
+
+    .modal-info h4 {
+        font-size: 1.1rem;
+    }
+}
 /* Footer */
 footer {
     background-color: black;
