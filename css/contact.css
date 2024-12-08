@@ -1,0 +1,161 @@
+.contact-section {
+  background-color: black;
+  color: white;
+  padding: 60px 20px;
+}
+.contact-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-section .container .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.contact-section .container .section-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+.contact-section .container .contact-form-wrapper {
+  margin-bottom: 30px;
+}
+.contact-section .container .contact-form-wrapper .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-section .container .contact-form-wrapper .contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.contact-section .container .contact-form-wrapper .contact-form .form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+.contact-section .container .contact-form-wrapper .contact-form .form-group input,
+.contact-section .container .contact-form-wrapper .contact-form .form-group textarea {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+}
+.contact-section .container .contact-form-wrapper .contact-form .form-group input:focus,
+.contact-section .container .contact-form-wrapper .contact-form .form-group textarea:focus {
+  outline: none;
+  border-color: #e4381C;
+}
+.contact-section .container .contact-form-wrapper .contact-form .primary-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #e4381C;
+  color: white;
+  border: 2px solid #e4381C;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.contact-section .container .contact-form-wrapper .contact-form .primary-btn:hover {
+  background-color: #b52f15;
+  color: white;
+}
+.contact-section .container .email-button-wrapper {
+  margin-top: 20px;
+}
+.contact-section .container .email-button-wrapper .email-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #1c1c1c;
+  color: #e4381C;
+  border: 2px solid #e4381C;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.contact-section .container .email-button-wrapper .email-btn:hover {
+  background-color: #e4381C;
+  color: white;
+}
+.contact-section .modal .modal-header {
+  background-color: #222;
+  color: white;
+}
+.contact-section .modal .modal-header .btn-close {
+  color: white;
+}
+.contact-section .modal .modal-header .btn-close:hover {
+  color: white;
+}
+.contact-section .modal .modal-body {
+  color: white;
+  background-color: rgb(21.25, 21.25, 21.25);
+}
+.contact-section .modal .modal-footer {
+  background-color: #222;
+}
+.contact-section .modal .modal-footer .btn-secondary {
+  background-color: rgb(59.5, 59.5, 59.5);
+  border: none;
+}
+.contact-section .modal .modal-footer .btn-secondary:hover {
+  background-color: rgb(72.25, 72.25, 72.25);
+}
+.contact-section .modal .modal-footer .btn-primary {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #e4381C;
+  color: white;
+  border: 2px solid #e4381C;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.contact-section .modal .modal-footer .btn-primary:hover {
+  background-color: #b52f15;
+  color: white;
+}
+.contact-section .email-section {
+  background-color: black;
+  color: white;
+  padding: 50px 20px;
+}
+.contact-section .email-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-section .email-section .container .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.contact-section .email-section .container .section-description {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: white;
+}
+.contact-section .email-section .container .primary-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #e4381C;
+  color: white;
+  border: 2px solid #e4381C;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+.contact-section .email-section .container .primary-btn:hover {
+  background-color: #b52f15;
+  color: white;
+}
+
+/*# sourceMappingURL=contact.css.map */

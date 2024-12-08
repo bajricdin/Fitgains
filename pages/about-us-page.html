@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_about_us.css">
 </head>
 <body>
      <!-- Navbar -->
@@ -27,7 +29,7 @@
               </div>
       
               <!-- Centered Logo -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="../index.html">
                 <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
               </a>
       
@@ -47,7 +49,7 @@
             <!-- Mobile Navbar -->
             <div class="mobile-navbar d-lg-none">
               <!-- Mobile Logo -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="../index.html">
                 <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
               </a>
       
@@ -77,25 +79,59 @@
           </div>
         </nav>
       </header>
-    <!-- About Us Content -->
-    <div class="container my-5">
-        <h1 class="text-center mb-4">About Fitgains</h1>
-        <p>
-            At Fitgains, we believe fitness should be accessible to everyone. Our goal is to make it easy for people to get 
-            customized workout plans that fit their lifestyle, goals, and fitness level.
-        </p>
+    <!--About Us Section -->
+    <article class="about-us-section">
+        <div class="container my-5">
+            <h1 class="section-title text-center mb-4">About Fitgains</h1>
+            <p class="about-description text-center">
+                Fitgains is your ultimate fitness companion, delivering personalized workout plans tailored to your goals. 
+                Discover a better way to achieve the fitness lifestyle you deserve.
+            </p>
 
-        <h2>Our Mission</h2>
-        <p>We aim to empower individuals by providing the tools and plans needed to achieve their fitness goals.</p>
+            <div class="about-content">
+                <div class="about-mission">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2 class="about-heading">Our Mission</h2>
+                    <p>
+                        We strive to empower individuals with easy-to-follow workout plans, helping you break barriers and 
+                        reach your fitness goals with confidence.
+                    </p>
+                </div>
+                <div class="about-why-choose">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h2 class="about-heading">Why Choose Us?</h2>
+                    <ul class="about-list">
+                        <li>Personalized workout plans crafted for you</li>
+                        <li>Simple and intuitive interface for all fitness levels</li>
+                        <li>Completely free, with no hidden charges</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
 
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>Personalized workout plans</li>
-            <li>Simple and intuitive interface</li>
-            <li>Free access to all users</li>
-        </ul>
-    </div>
-
+    <!-- Google Maps Section -->
+    <section class="google-maps-section">
+        <div class="container">
+            <h2 class="section-title">Find Us on the Map</h2>
+            <p class="section-description">
+                Locate our headquarter and get directions to our office.
+            </p>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.794198363223!2d18.309495076185513!3d43.818628071094714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca0f99d6bf3b%3A0x6f97362d8c61c461!2sInternational%20Burch%20University!5e0!3m2!1sbs!2sba!4v1731852605893!5m2!1sbs!2sba" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-white text-center py-3">
+        <p>IBU 061 - Foundations of Web Development | &copy; Fitgains | Created by Din Bajric</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 </body>
 </html>

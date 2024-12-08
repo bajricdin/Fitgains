@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Plan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_workout.css">
 </head>
 <body>
     <header>
@@ -26,7 +28,7 @@
               </div>
       
               <!-- Centered Logo -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="../index.html">
                 <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
               </a>
       
@@ -46,7 +48,7 @@
             <!-- Mobile Navbar -->
             <div class="mobile-navbar d-lg-none">
               <!-- Mobile Logo -->
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="../index.html">
                 <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
               </a>
       
@@ -76,37 +78,101 @@
           </div>
         </nav>
       </header>
-    <!-- Workout Plan Form -->
-    <div class="container my-5">
+    <!-- Combined Workout Plan Form -->
+    <section class="container my-5">
         <h1 class="text-center mb-4">Generate Your Workout Plan</h1>
-        <form id="workoutForm" class="mb-5">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                </div>
-                <div class="col-md-6 mb-3">
+        <form id="workoutForm" class="mb-5" method="POST" action="https://jsonplaceholder.typicode.com/posts.">
+            <fieldset>
+                <legend>Fitness Information</legend>
+
+                <!-- Fitness Level Section -->
+                <div class="mb-3">
                     <label for="age" class="form-label">Age</label>
-                    <input type="number" id="age" class="form-control" placeholder="Enter your age" required>
+                    <input type="number" id="age" class="form-control" name="age" placeholder="Enter your age" required>
+                    <label for="fitnessLevel" class="form-label">Fitness Level</label>
+                    <select id="fitnessLevel" class="form-select" name="fitnessLevel" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
                 </div>
+
+                <!-- Fitness Goal Section -->
+                <div class="mb-3">
+                    <label for="goal" class="form-label">Fitness Goal</label>
+                    <input type="text" id="goal" class="form-control" name="goal" placeholder="e.g., Build Muscle, Lose Weight" required>
+                </div>
+
+                <!-- Gender Section -->
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select" name="gender" required>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+
+                <!-- Weight Section -->
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" id="weight" class="form-control" name="weight" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Workout Preferences</legend>
+
+                <!-- Workout Duration Section -->
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Workout Duration</label>
+                    <select id="duration" class="form-select" name="duration" required>
+                        <option value="max 45 minutes">45 minutes</option>
+                        <option value="max 1 hour">1 hour</option>
+                        <option value="unlimited">1+ hours</option>
+                    </select>
+                </div>
+
+                <!-- Days Split Section -->
+                <div class="mb-3">
+                    <label for="days" class="form-label">How Many Days Split</label>
+                    <select id="days" class="form-select" name="days" required>
+                        <option value="3 day">3 day</option>
+                        <option value="4 day">4 day</option>
+                        <option value="5 day">5 day</option>
+                        <option value="6 day">6 day</option>
+                        <option value="7 day">7 day</option>
+                    </select>
+                </div>
+
+                <!-- Preferred Split Section -->
+                <div class="mb-3">
+                    <label for="split" class="form-label">Preferred Split</label>
+                    <select id="split" class="form-select" name="split" required>
+                        <option value="irrelevant">Default</option>
+                        <option value="Total Body Split">Total Body Split</option>
+                        <option value="Upper">Upper</option>
+                        <option value="Lower">Lower</option>
+                        <option value="Upper Lower">Upper Lower</option>
+                        <option value="Push,Pull,Legs">Push, Pull, Legs</option>
+                        <option value="Bro split">Bro split</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- Loader Section -->
+            <div id="loader-container" class="loader-container d-none">
+                <div id="loader" class="loader2"></div>
+                <p class="loading-text">Estimated time: 15 seconds.</p>
             </div>
-            <div class="mb-3">
-                <label for="fitnessLevel" class="form-label">Fitness Level</label>
-                <select id="fitnessLevel" class="form-select" required>
-                    <option value="">Select</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                </select>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="button" class="btn site-btn2" onclick="generatePlan()">Generate Plan</button>
             </div>
-            <div class="mb-3">
-                <label for="goal" class="form-label">Fitness Goal</label>
-                <input type="text" id="goal" class="form-control" placeholder="e.g., Build Muscle, Lose Weight" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Generate Plan</button>
         </form>
 
-        <!-- Workout Plan Table -->
+        <!-- Workout Plan Table Section -->
         <div id="workoutPlanContainer" class="d-none">
             <h2 class="text-center">Your Personalized Workout Plan</h2>
             <table class="table table-striped mt-4">
@@ -120,7 +186,11 @@
                 <tbody id="workoutTableBody"></tbody>
             </table>
         </div>
-    </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-white text-center py-3">
+        <p>IBU 061 - Foundations of Web Development | &copy; Fitgains | Created by Din Bajric</p>
+    </footer>
 
     <script src="../js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
