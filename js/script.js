@@ -116,3 +116,16 @@ thumbnails.forEach(thumbnail => {
     });
 });
 
+// Nutriotion section 
+const buttons = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.content');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.style.display = 'none');
+            
+        button.classList.add('active');
+        const target = button.getAttribute('data-target');
+        document.getElementById(target).style.display = 'block';
+        });
+    });
