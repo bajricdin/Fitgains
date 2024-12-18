@@ -209,3 +209,80 @@ input{
         border: 1px solid white;
     }
 }
+
+/* Nutrition and Calories API */
+.nutrition-section {
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: black;
+    border-radius: 8px;
+    max-width: 900px;
+    border: 5px solid #FF7B07;
+}
+
+.nutrition-section h2 {
+    font-size: 2.3rem;
+    margin-top: 10px;
+    color: white;
+}
+.nutrition-section input[type="text"] {
+    display: block;
+    width: 95%; 
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #222; 
+    border: 2px solid #FF7B07;
+    border-radius: 8px;
+    margin: 15px auto;
+    box-sizing: border-box;
+    text-align: center; 
+}
+
+.nutrition-section input[type="text"]::placeholder {
+    color: white;
+    opacity: 0.8;
+}
+
+.nutrition-section button {
+    background-color: #FF7B07;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nutrition-section button:hover {
+    background-color: #e66900;
+}
+
+#nutrition-results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    margin: 15px;
+}
+
+@media (max-width: 768px) {
+    .nutrition-section {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .nutrition-section input[type="text"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .nutrition-section button {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
