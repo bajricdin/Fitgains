@@ -128,7 +128,7 @@
             </div>
         </div>
     </article>
-    <section class="gallery-section">
+    <section id="legends" class="gallery-section">
       <div class="container text-center">
           <h2 class="section-title">Legendary Bodybuilders Powered by Fitgains</h2>
           <div class="row">
@@ -141,7 +141,7 @@
                   <p class="builders">Ronnie Coleman</p>
               </div>
               <div class="col-md-4 mb-3">
-                  <img src="images/cbum.jpg" class="img-thumbnail gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal" alt="Jay Cutler">
+                  <img src="images/cbum.jpg" class="img-thumbnail gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal" alt="Chris Bumstead">
                   <p class="builders">Chris Bumstead</p>
               </div>
           </div>
@@ -149,24 +149,26 @@
   
       <!-- Modal -->
       <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content" style="background-color: #000; color: #fff;">
-                <div class="modal-body d-flex">
-                    <div class="modal-img-container flex-shrink-0 me-4">
-                        <img src="" id="modalImage" class="img-fluid rounded" alt="Selected Image">
-                    </div>
-                    <div class="modal-info">
-                        <h2 id="modalName" class="mb-3"></h2>
-                        <p id="modalDescription" class="mb-4"></p>
-                        <h4>Achievements</h4>
-                        <p id="modalAchievements"></p>
-                    </div>
-                </div>
-                <div class="modal-footer border-0 d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content" style="background-color: #000; color: #fff;">
+                  <div class="modal-body d-flex">
+                      <div class="modal-img-container flex-shrink-0 me-4">
+                          <img src="" id="modalImage" class="img-fluid rounded" alt="Selected Image">
+                      </div>
+                      <div class="modal-info">
+                          <h2 id="modalName" class="mb-3"></h2>
+                          <p id="modalDescription" class="mb-4"></p>
+                          <h4>Achievements</h4>
+                          <p id="modalAchievements"></p>
+                          <!-- View More Button -->
+                          <a href="" id="modalViewMore" class="btn btn-outline-light mt-3">View More</a>
+                      </div>
+                  </div>
+                  <div class="modal-footer border-0 d-flex justify-content-end">
+                      <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
       </div>
   </section>
   

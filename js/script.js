@@ -89,30 +89,34 @@ const bodybuilders = {
     "Arnold Schwarzenegger": {
         description: "An Austrian-American bodybuilder who revolutionized bodybuilding and became an iconic actor and politician.",
         achievements: "7x Mr. Olympia, 5x Mr. Universe, Actor, and Politician.",
-        img: "images/arnold.jpg"
+        img: "images/arnold.jpg",
+        moreInfoLink: "detail-pages/arnold-details.html" 
     },
     "Ronnie Coleman": {
         description: "An American professional bodybuilder regarded as one of the greatest in bodybuilding history.",
         achievements: "8x Mr. Olympia, Known as 'The King' of bodybuilding.",
-        img: "images/ronnie.png"
+        img: "images/ronnie.png",
+        moreInfoLink: "detail-pages/ronnie-details.html" 
     },
     "Chris Bumstead": {
         description: "A Canadian professional bodybuilder dominating the Classic Physique division.",
         achievements: "4x Classic Physique Mr. Olympia, Social Media Influencer.",
-        img: "images/cbum.jpg"
+        img: "images/cbum.jpg",
+        moreInfoLink: "detail-pages/cbum-details.html" 
     }
 };
 
-const thumbnails = document.querySelectorAll(".gallery-img");
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener("click", () => {
-        const name = thumbnail.nextElementSibling.textContent;
-        const bodybuilder = bodybuilders[name] || {};
+document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+        const name = img.nextElementSibling.textContent;
+        const bodybuilder = bodybuilders[name];
 
         document.getElementById("modalName").textContent = name;
-        document.getElementById("modalImage").src = bodybuilder.img || "";
-        document.getElementById("modalDescription").textContent = bodybuilder.description || "Description not found.";
-        document.getElementById("modalAchievements").textContent = bodybuilder.achievements || "Achievements not found.";
+        document.getElementById("modalImage").src = bodybuilder.img;
+        document.getElementById("modalDescription").textContent = bodybuilder.description;
+        document.getElementById("modalAchievements").textContent = bodybuilder.achievements;
+        
+        document.getElementById("modalViewMore").setAttribute("href", bodybuilder.moreInfoLink);
     });
 });
 
@@ -142,7 +146,7 @@ document.getElementById('food-form').addEventListener('submit', async function (
         return;
     }
 
-    const apiKey = '8f2d05660c8e5054cff8b6b9f3a04e62'; 
+    const apiKey = 'ba8efdfa2542be47cffa653ca365e24a'; 
     const appId = 'acddd836';  
 
     try {
@@ -168,7 +172,7 @@ document.getElementById('food-form').addEventListener('submit', async function (
             resultsDiv.innerHTML = "No data available for the entered food item.";
             return;
         }
-        
+
         resultsDiv.style.border = '2px solid white';
         resultsDiv.innerHTML = `
             <h3>${foodItem.toUpperCase()}</h3>

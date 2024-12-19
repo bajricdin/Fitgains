@@ -1,0 +1,59 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.content-section {
+    padding: 40px 20px;
+    background-color: #111;
+}
+.content-section h2 {
+    color: #ff6600;
+}
+.content-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.achievements, .career-impact {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.achievements h3, .career-impact h3 {
+    color: #ff6600;
+}
+.achievements ul, .career-impact ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.achievements ul li, .career-impact ul li {
+    font-size: 1.1rem;
+    padding: 5px 0;
+}
+.btn-view-more {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn-view-more:hover {
+    background-color: #e65c00;
+}
