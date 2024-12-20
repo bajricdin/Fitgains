@@ -17,11 +17,11 @@ h1, h2 {
 
 /* Form Section Styles */
 fieldset {
-    border: 2px solid #444;
+    border: 5px solid #FF7B07;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #444;
+    background-color: black;
 }
 
 legend {
@@ -44,10 +44,20 @@ legend {
     margin: 8px 0;
     border-radius: 5px;
     border: 1px solid #222;
+    background-color: #222;
+    color: #fff;
+
 }
+
+.form-control::placeholder{
+    color: #666;
+}
+
 
 .form-select:focus, .form-control:focus {
     outline: none;
+    background-color: #222;
+    color: white;
     border-color: #2980b9;
 }
 
@@ -63,7 +73,8 @@ input{
 .btn {
     padding: 10px 20px;
     background-color: #FF7B07;
-    color: #fff;
+    color: black;
+    font-weight: 700;
     border: none;
     border-radius: 5px;
     cursor: pointer;
