@@ -61,12 +61,34 @@ legend {
     border-color: #2980b9;
 }
 
+.form-text{
+    color: #aaa;
+}
+
 .mb-3 {
     margin-bottom: 20px;
 }
 
 input{
     background-color: black;
+}
+
+
+/* Borders for form validation */
+input, .form-control {
+    border: 2px solid #ccc;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 14px;
+    width: 100%;
+}
+
+input.valid, .form-control.valid {
+    border: 2px solid green;
+}
+
+input.invalid, .form-control.invalid {
+    border: 2px solid red;
 }
 
 /* Button Styles */
