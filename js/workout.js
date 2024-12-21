@@ -8,23 +8,67 @@ function validateInput(input, isValid) {
         input.classList.remove('valid');
     }
 }
-// Functions that checks if the form satisfies some conditions and based on that calls validateInput function to change border accordingly
-function validateAndUpdate() {
-    const ageInput = document.getElementById('age');
+// Functions that checks if the form satisfies some conditions and based on that calls 
+// validateInput function to change border accordingly
+function validateAndUpdateWeight() {   
     const weightInput = document.getElementById('weight');
-
-    const age = parseInt(ageInput.value, 10);
     const weight = parseFloat(weightInput.value);
-
-    const ageIsValid = age >= 16 && age <= 100;
-    validateInput(ageInput, ageIsValid);
-
     const weightIsValid = weight >= 30 && weight <= 300;
     validateInput(weightInput, weightIsValid);
 }
+function validateAndUpdateAge(){
+    const ageInput = document.getElementById('age');
+    const age = parseInt(ageInput.value, 10);
+    const ageIsValid = age >= 16 && age <= 100;
+    validateInput(ageInput, ageIsValid);
+}
 // Basically every time something is typed inside input it calles function to validate form
-document.getElementById('age').addEventListener('input', validateAndUpdate);
-document.getElementById('weight').addEventListener('input', validateAndUpdate);
+document.getElementById('age').addEventListener('input', validateAndUpdateAge);
+document.getElementById('weight').addEventListener('input', validateAndUpdateWeight);
+
+// Handle form submission using AJAX
+let currentId = 101;    
+document.getElementById('workoutForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const formAction = this.action;
+
+    // Log all form data to the console
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+    console.log("Form Data Submitted:", formObject);
+
+    // Perform AJAX request
+    fetch(formAction, {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to submit form data.");
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert("Form submitted successfully!");
+            console.log("Response data:", {id : currentId});
+            currentId++;
+
+            // Reseting the form and setting border to default color
+            document.getElementById('workoutForm').reset();
+            document.querySelectorAll('.valid, .invalid').forEach(el => {
+                el.classList.remove('valid', 'invalid');
+            });
+        })
+        .catch(error => {
+            console.error("Error submitting form:", error);
+            alert("There was an error submitting the form. Please try again.");
+        });
+});
+
 
 // Function to handle form submission and workout plan generation
 function generatePlan() {
@@ -63,24 +107,26 @@ function generatePlan() {
             return response.json();
         })
         .then(data => {
-            document.getElementById('loader-container').classList.add('d-none');
+            setTimeout(() => {
+                document.getElementById('loader-container').classList.add('d-none');
 
-            document.getElementById('workoutPlanContainer').classList.remove('d-none');
+                document.getElementById('workoutPlanContainer').classList.remove('d-none');
 
-            var tableBody = document.getElementById('workoutTableBody');
-            tableBody.innerHTML = ''; 
+                var tableBody = document.getElementById('workoutTableBody');
+                tableBody.innerHTML = ''; 
 
-            // Populate the table with data from the JSON file
-            const plan = data.workouts;
-            plan.forEach(function (item) {
-                var row = document.createElement('tr');
-                row.innerHTML = `<td>${item.day}</td><td>${item.workout}</td><td>${item.repsSets}</td>`;
-                tableBody.appendChild(row);
-            });
+                // Populate the table with data from the JSON file
+                const plan = data.workouts;
+                plan.forEach(function (item) {
+                    var row = document.createElement('tr');
+                    row.innerHTML = `<td>${item.day}</td><td>${item.workout}</td><td>${item.repsSets}</td>`;
+                    tableBody.appendChild(row);
+                });
+            }, 2000);
         })
         .catch(error => {
             document.getElementById('loader-container').classList.add('d-none');
             console.error("Error loading workouts:", error);
             alert("There was an error loading the workout plan. Please try again.");
         });
-    }
+}

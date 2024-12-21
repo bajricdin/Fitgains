@@ -167,6 +167,7 @@ input.invalid, .form-control.invalid {
 
 .table td:hover{
     background-color: #FF7101;
+    transition: 0.4s ease-in-out;
 }
 
 .table-striped tbody tr:nth-child(odd) {
