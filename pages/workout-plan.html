@@ -177,16 +177,19 @@
       <!-- Workout Plan Table Section -->
       <div id="workoutPlanContainer" class="d-none">
           <h2 class="text-center">Your Personalized Workout Plan</h2>
-          <table class="table table-striped mt-4">
+          <div class="table-container">
+            <table id="workoutTable" class="table table-striped mt-4">
               <thead>
-                  <tr>
-                      <th>Day</th>
-                      <th>Workout</th>
-                      <th>Reps/Sets</th>
-                  </tr>
-              </thead>
-              <tbody id="workoutTableBody"></tbody>
-          </table>
+                <tr>
+                    <th>Day</th>
+                    <th>Workout</th>
+                    <th>Reps/Sets</th>
+                    <th>Actions</th>                  
+                </tr>
+            </thead>
+                <tbody id="workoutTableBody"></tbody>
+            </table>
+        </div>
       </div>
   </section>
   

@@ -70,7 +70,6 @@ document.getElementById('workoutForm').addEventListener('submit', function (even
 });
 
 
-// Function to handle form submission and workout plan generation
 function generatePlan() {
     var age = document.getElementById('age').value;
     var fitnessLevel = document.getElementById('fitnessLevel').value;
@@ -108,19 +107,45 @@ function generatePlan() {
         })
         .then(data => {
             setTimeout(() => {
-                document.getElementById('loader-container').classList.add('d-none');
-
+                document.getElementById('loader-container').classList.add('d-none');               
                 document.getElementById('workoutPlanContainer').classList.remove('d-none');
 
                 var tableBody = document.getElementById('workoutTableBody');
-                tableBody.innerHTML = ''; 
+                tableBody.innerHTML = '';
 
                 // Populate the table with data from the JSON file
                 const plan = data.workouts;
                 plan.forEach(function (item) {
                     var row = document.createElement('tr');
-                    row.innerHTML = `<td>${item.day}</td><td>${item.workout}</td><td>${item.repsSets}</td>`;
+                    row.innerHTML = `
+                    <td>${item.day}</td>
+                    <td>${item.workout}</td>
+                    <td>${item.repsSets}</td>
+                    <td>
+                        <button class="btn-delete">Delete</button>
+                        <button class="btn-edit">Edit</button>
+                    </td>
+                    `;
                     tableBody.appendChild(row);
+
+                    // Delete button functionality
+                    row.querySelector('.btn-delete').addEventListener('click', function () {
+                        row.remove();
+                        alert("Entry deleted.");
+                    });
+
+                    // Edit button functionality
+                    row.querySelector('.btn-edit').addEventListener('click', function () {
+                        const cells = row.querySelectorAll('td:not(:last-child)');
+                        if (this.textContent === 'Edit') {
+                            cells.forEach(cell => cell.setAttribute('contenteditable', 'true'));
+                            this.textContent = 'Save';
+                        } else {
+                            cells.forEach(cell => cell.setAttribute('contenteditable', 'false'));
+                            this.textContent = 'Edit';
+                            alert("Changes saved.");
+                        }
+                    });
                 });
             }, 2000);
         })

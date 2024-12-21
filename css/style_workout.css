@@ -25,9 +25,9 @@ fieldset {
 }
 
 legend {
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: bold;
-    color: #FF7B07;
+    color: white;
     text-align: center;
 }
 
@@ -163,6 +163,7 @@ input.invalid, .form-control.invalid {
     color: black;
     border: 1px solid #FF7B07;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .table td:hover{
@@ -170,10 +171,61 @@ input.invalid, .form-control.invalid {
     transition: 0.4s ease-in-out;
 }
 
-.table-striped tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
+.table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
 }
 
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        font-size: 0.9rem; 
+        padding: 6px; 
+    }
+
+    .table button {
+        font-size: 0.8rem; 
+        padding: 5px 8px; 
+    }
+}
+/* Style for delete edit save buttons */
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.table .th{
+    text-align: center;
+}
+.table th:last-child, 
+.table td:last-child {
+    text-align: center;
+    width: 120px;
+}
+
+.table td:last-child:hover {
+    background-color: black;
+}
+.table button {
+    padding: 6px 10px;
+    background-color: #FF7B07;
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.table button:hover {
+    background-color: #3498db;
+}
 /* Nutrition section */
 .nutrition-tips {
     font-family: Arial, sans-serif;
@@ -206,7 +258,7 @@ input.invalid, .form-control.invalid {
     font-weight: 600;
 }
 .tab-btn.active {
-    background-color: orange;
+    background-color:#FF7B07;
     color: black;
 }
 .content {
