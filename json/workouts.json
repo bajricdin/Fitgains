@@ -1,0 +1,19 @@
+{
+    "workouts": [
+        {
+            "day": "Day 1",
+            "workout": "Push-Ups",
+            "repsSets": "3 sets of 15 reps"
+        },
+        {
+            "day": "Day 2",
+            "workout": "Squats",
+            "repsSets": "4 sets of 12 reps"
+        },
+        {
+            "day": "Day 3",
+            "workout": "Pull-Ups",
+            "repsSets": "3 sets of 8 reps"
+        }
+    ]
+}
