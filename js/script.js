@@ -1,3 +1,30 @@
+// Notifications
+function showToast(message, type) {
+    const toast = document.getElementById('toast');
+    const toastDanger = document.getElementById('toast-danger')
+    const toastMessage = document.getElementById('toast-message');
+    const toastMessageDanger = document.getElementById('toast-message-danger');
+    // If 2 notification pops out, first one dissapears and the latest one is visible
+    toast.classList.remove('show');
+    toastDanger.classList.remove('showDanger');
+
+    if (type === 'red'){
+        toastMessageDanger.textContent = message;
+        toastDanger.classList.add('showDanger');
+        
+        setTimeout(() => {
+            toastDanger.classList.remove('showDanger');
+        }, 3000);
+    }else if (type === 'green'){
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);   
+    }   
+}
+
 // Interactive modal with dynamic content of bodybuilders
 document.querySelectorAll('.gallery-img').forEach(img => {
     img.addEventListener('click', () => {

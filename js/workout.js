@@ -53,7 +53,7 @@ document.getElementById('workoutForm').addEventListener('submit', function (even
             return response.json();
         })
         .then(data => {
-            alert("Form submitted successfully!");
+            // alert("Form submitted successfully!");
             console.log("Response data:", {id : currentId});
             currentId++;
 
@@ -65,7 +65,8 @@ document.getElementById('workoutForm').addEventListener('submit', function (even
         })
         .catch(error => {
             console.error("Error submitting form:", error);
-            alert("There was an error submitting the form. Please try again.");
+            // alert("There was an error submitting the form. Please try again.");
+            showToast("There was an error submitting the form. Please try again.", "red")
         });
 });
 
@@ -81,7 +82,8 @@ function generatePlan() {
     var split = document.getElementById('split').value;
 
     if (!age || !fitnessLevel || !goal || !gender || !weight || !duration || !days || !split) {
-        alert("Please fill in all required fields.");
+        // alert("Please fill in all required fields.");
+        showToast("Please fill in all required fields.", "red")
         return;
     }
 
@@ -91,7 +93,8 @@ function generatePlan() {
     const weightIsValid = parseFloat(weight) >= 30 && parseFloat(weight) <= 300;
 
     if (!ageIsValid || !weightIsValid) {
-        alert("Please enter valid age (16-100) and weight (30-300).");
+        // alert("Please enter valid age (16-100) and weight (30-300).");
+        showToast("Please enter valid age (16-100) and weight (30-300).", "red")
         return;
     }
 
@@ -109,7 +112,7 @@ function generatePlan() {
             setTimeout(() => {
                 document.getElementById('loader-container').classList.add('d-none');               
                 document.getElementById('workoutPlanContainer').classList.remove('d-none');
-
+                // showToast('Molimo unesite sve podatke za pretraživanje.', 'red');
                 var tableBody = document.getElementById('workoutTableBody');
                 tableBody.innerHTML = '';
 
@@ -131,7 +134,8 @@ function generatePlan() {
                     // Delete button functionality
                     row.querySelector('.btn-delete').addEventListener('click', function () {
                         row.remove();
-                        alert("Entry deleted.");
+                        // alert("Entry deleted.");
+                        showToast('Entry deleted!', "red");
                     });
 
                     // Edit button functionality
@@ -143,15 +147,17 @@ function generatePlan() {
                         } else {
                             cells.forEach(cell => cell.setAttribute('contenteditable', 'false'));
                             this.textContent = 'Edit';
-                            alert("Changes saved.");
+                            // alert("Changes saved.");
+                            showToast('Changes saved.', "green");
                         }
                     });
-                });
+                });showToast("Form submitted successfully!", "green")
             }, 2000);
         })
         .catch(error => {
             document.getElementById('loader-container').classList.add('d-none');
             console.error("Error loading workouts:", error);
-            alert("There was an error loading the workout plan. Please try again.");
+            // alert("There was an error loading the workout plan. Please try again.");
+            showToast("There was an error loading the workout plan. Please try again.", "red")
         });
 }

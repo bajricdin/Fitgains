@@ -82,6 +82,14 @@
     <section class="container my-3">
       <h1 class="text-center mb-4">Generate Your Workout Plan</h1>
       <form id="workoutForm" class="mb-5" method="POST" action="https://jsonplaceholder.typicode.com/posts">
+          <!-- Success Notification -->
+          <div id="toast" class="toast">
+            <p id="toast-message"></p>
+          </div>
+          <!-- Danger Notification -->
+          <div id="toast-danger" class="toast-danger">
+            <p id="toast-message-danger"></p>
+          </div>
           <fieldset>
               <legend>Fitness Information</legend>
   

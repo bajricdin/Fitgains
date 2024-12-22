@@ -682,6 +682,49 @@ body {
         font-size: 1.1rem;
     }
 }
+/* Notifications */
+.toast {
+    position: fixed;
+    height: 60px;
+    font-weight: 600;
+    top: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1000;
+}
+
+.toast-danger {
+    position: fixed;
+    height: 60px;
+    font-weight: 600;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1000;
+}
+/* Show Toast Animation */
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.toast-danger.showDanger {
+    opacity: 1;
+    transform: translateX(0);
+}
 /* Footer */
 footer {
     background-color: black;
