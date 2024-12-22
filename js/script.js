@@ -1,3 +1,50 @@
+// Select buttons
+const smallBtnDesktop = document.getElementById('font-small-desktop');
+const mediumBtnDesktop = document.getElementById('font-medium-desktop');
+const largeBtnDesktop = document.getElementById('font-large-desktop');
+
+const smallBtnMobile = document.getElementById('font-small-mobile');
+const mediumBtnMobile = document.getElementById('font-medium-mobile');
+const largeBtnMobile = document.getElementById('font-large-mobile');
+
+function setFontSize(size) {
+  document.querySelectorAll('p').forEach((p) => {
+    p.style.fontSize = size;
+  });
+  localStorage.setItem('fontSize', size);
+  activateButtons(size);
+}
+
+// Activate correct buttons (desktop and mobile)
+function activateButtons(size) {
+  [smallBtnDesktop, mediumBtnDesktop, largeBtnDesktop, smallBtnMobile, mediumBtnMobile, largeBtnMobile].forEach((btn) => {
+    btn.classList.remove('active');
+  });
+
+  if (size === '14px') {
+    smallBtnDesktop.classList.add('active');
+    smallBtnMobile.classList.add('active');
+  } else if (size === '18px') {
+    mediumBtnDesktop.classList.add('active');
+    mediumBtnMobile.classList.add('active');
+  } else if (size === '32px') {
+    largeBtnDesktop.classList.add('active');
+    largeBtnMobile.classList.add('active');
+  }
+}
+
+
+const savedFontSize = localStorage.getItem('fontSize') || '14px';
+setFontSize(savedFontSize);
+
+smallBtnDesktop.addEventListener('click', () => setFontSize('14px'));
+mediumBtnDesktop.addEventListener('click', () => setFontSize('18px'));
+largeBtnDesktop.addEventListener('click', () => setFontSize('32px'));
+
+smallBtnMobile.addEventListener('click', () => setFontSize('14px'));
+mediumBtnMobile.addEventListener('click', () => setFontSize('18px'));
+largeBtnMobile.addEventListener('click', () => setFontSize('32px'));
+
 // Notifications
 function showToast(message, type) {
     const toast = document.getElementById('toast');

@@ -7,6 +7,43 @@ body {
     background-color: white;
 }
 
+.font-size-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .font-size-controls button.active {
+    background-color: #e16521;
+    color: #fff;
+    border-color: #e4381C;
+  }
+  @media (min-width: 992px) {
+    .font-size-controls {
+      position: absolute;
+      right: 40px; 
+      top: 50%; 
+      transform: translateY(-50%);
+    }
+  }
+  @media (min-width: 1292px) {
+    .font-size-controls {
+      position: absolute;
+      right: 220px; 
+      top: 50%; 
+      transform: translateY(-50%);
+    }
+  }
+  
+  @media (max-width: 991.98px) {
+    .font-size-controls {
+      text-align: center;
+    }
+  }
+  
 /* Navbar*/
 .navbar {
     background-color: black;
@@ -96,7 +133,7 @@ body {
       flex-direction: column;
       align-items: center;
       width: 100%;
-      padding: 10px 0;
+      padding: 20px 0;
       position: absolute;
       top: 100%; 
       left: 0;
@@ -121,7 +158,12 @@ body {
       justify-content: space-around !important;
     }
   }
-  
+  @media (max-width: 320px){
+    .navbar-toggler{
+        position: absolute;
+        right: 0;
+    }
+  }
   #link-workout {
     padding-right: 35px;
   }
