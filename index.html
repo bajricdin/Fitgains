@@ -8,8 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/spapp.css">
 </head>
 <body>
+  <section id="pageContent">
+    <main id="spapp" role="main">
      <!-- Navbar -->
      <header>
       <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
@@ -20,27 +23,27 @@
             <div class="navbar-left">
               <ul class="navbar-nav d-flex">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" data-target="home" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="link-workout" href="pages/workout-plan.html">Workout Plan</a>
+                  <a class="nav-link" data-target="workout" id="link-workout" href="#workout">Workout Plan</a>
                 </li>
               </ul>
             </div>
     
             <!-- Centered Logo -->
-            <a class="navbar-brand" href="index.html">
-              <img src="images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
+            <a class="navbar-brand" href="#home">
+              <img src="images/logo.png" data-target="home" alt="Fitgains Logo" height="60" class="logo-img">
             </a>
     
             <!-- Right Links -->
             <div class="navbar-right">
               <ul class="navbar-nav d-flex">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/about-us-page.html">About Us</a>
+                  <a class="nav-link" data-target="aboutus" href="#aboutus">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="last-link" href="pages/contact-page.html">Contact</a>
+                  <a class="nav-link" id="last-link" data-target="contactus" href="#contactus">Contact</a>
                 </li>
               </ul>
             </div>
@@ -56,7 +59,7 @@
           <!-- Mobile Navbar -->
           <div class="mobile-navbar d-lg-none">
             <!-- Mobile Logo -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#home">
               <img src="images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
             </a>
     
@@ -69,16 +72,16 @@
             <div class="collapse navbar-collapse" id="navbar1">
               <ul class="navbar-nav d-flex flex-column text-center">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/workout-plan.html">Workout Plan</a>
+                  <a class="nav-link" href="#workout">Workout Plan</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/about-us-page.html">About Us</a>
+                  <a class="nav-link" href="#aboutus">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/contact-page.html">Contact</a>
+                  <a class="nav-link" href="#contactus">Contact</a>
                 </li>
               </ul>
     
@@ -93,136 +96,31 @@
         </div>
       </nav>
     </header>    
-    <!-- Hero Section -->
-    <header id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="hero-text">
-                <h2>Join Us Now</h2>
-                <h1>FITG<span style="color: #e4381C;">AI</span>NS</h1>
-                <a href="pages/workout-plan.html#workoutFormHeader" class="primary-btn">Create Plan</a>
-            </div>
-          <div class="carousel-item active">
-            <img src="images/firstone.jpg" class="d-block w-100 first-img" alt="Muscluar man in dark shadow">
-          </div>
-          <div class="carousel-item">
-            <img src="images/secondone.jpg" class="d-block w-100 second-img" alt="Muscular man's back in dark shadow">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </header>
-    <!-- Why Fitgains Section -->
-    <article class="why-fitgains">
-        <div class="container">
-            <h2 class="section-title">Why Choose Fitgains?</h2>
-            <p class="section-subtitle">
-                Get personalized workout plans that help you achieve your fitness goals faster and more efficiently.
-            </p>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="section-description">
-                        Fitgains offers custom fitness plans tailored to your goals. Whether you're building muscle, losing weight, or increasing endurance, our plans are designed to evolve with you.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Tailored workout routines for your goals.</li>
-                        <li>Plans that adjust as you progress.</li>
-                        <li>Easy-to-follow exercises with demonstrations.</li>
-                        <li>Track your progress and stay motivated.</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="images/about.jpg" alt="Fitgains Fitness" class="img-fluid rounded shadow-lg" />
-                </div>
-            </div>
-        </div>
-    </article>
-    <section id="legends" class="gallery-section">
-      <div class="container text-center">
-          <h2 class="section-title">Legendary Bodybuilders Powered by Fitgains</h2>
-          <div class="row">
-              <div class="col-md-4 mb-3">
-                  <img src="images/arnold.jpg" class="img-thumbnail gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal" alt="Arnold Schwarzenegger">
-                  <p class="builders">Arnold Schwarzenegger</p>
-              </div>
-              <div class="col-md-4 mb-3">
-                  <img src="images/ronnie.png" class="img-thumbnail gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal" alt="Ronnie Coleman">
-                  <p class="builders">Ronnie Coleman</p>
-              </div>
-              <div class="col-md-4 mb-3">
-                  <img src="images/cbum.jpg" class="img-thumbnail gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal" alt="Chris Bumstead">
-                  <p class="builders">Chris Bumstead</p>
-              </div>
-          </div>
-      </div>
+          <section id="home" data-load="landing.html">
+          </section>
+          <section id="workout" data-load="workout-plan.html">
+          </section>
+          <section id="aboutus" data-load="about-us-page.html">
+          </section>
+          <section id="contactus" data-load="contact-page.html">
+          </section>      
+          <section id="arnold" data-load="arnold-details.html">
+          </section>   
+          <section id="ronnie" data-load="ronnie-details.html">
+          </section>   
+          <section id="cbum" data-load="cbum-details.html">
+          </section>   
+        </main>
+      </section>
+  <!-- Footer -->
+  <footer class="text-white text-center py-3">
+      <p>IBU 061 - Foundations of Web Development | &copy; Fitgains | Created by Din Bajric</p>
+  </footer>
+
   
-      <!-- Modal -->
-      <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-              <div class="modal-content" style="background-color: #000; color: #fff;">
-                  <div class="modal-body d-flex">
-                      <div class="modal-img-container flex-shrink-0 me-4">
-                          <img src="" id="modalImage" class="img-fluid rounded" alt="Selected Image">
-                      </div>
-                      <div class="modal-info">
-                          <h2 id="modalName" class="mb-3"></h2>
-                          <p id="modalDescription" class="mb-4"></p>
-                          <h4>Achievements</h4>
-                          <p id="modalAchievements"></p>
-                          <!-- View More Button -->
-                          <a href="" id="modalViewMore" class="btn btn-outline-light mt-3">View More</a>
-                      </div>
-                  </div>
-                  <div class="modal-footer border-0 d-flex justify-content-end">
-                      <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="container">
-            <h2 class="section-title">Transform Your Fitness Journey</h2>
-            <p class="section-description">
-                Watch this video to learn how Fitgains can help you achieve your fitness goals.
-            </p>
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/FJRMldSmy-M?&loop=1&playlist=FJRMldSmy-M&controls=0"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-    </section>
-    <!-- Google Maps Section -->
-    <section class="google-maps-section">
-        <div class="container">
-            <h2 class="section-title">Find Us on the Map</h2>
-            <p class="section-description">
-                Locate our headquarter and get directions to our office.
-            </p>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.794198363223!2d18.309495076185513!3d43.818628071094714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ca0f99d6bf3b%3A0x6f97362d8c61c461!2sInternational%20Burch%20University!5e0!3m2!1sbs!2sba!4v1731852605893!5m2!1sbs!2sba" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="text-white text-center py-3">
-        <p>IBU 061 - Foundations of Web Development | &copy; Fitgains | Created by Din Bajric</p>
-    </footer>
-    
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery.spapp.js"></script>
+  <script src="js/spapp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

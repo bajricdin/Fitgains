@@ -84,20 +84,20 @@ const bodybuilders = {
     "Arnold Schwarzenegger": {
         description: "An Austrian-American bodybuilder who revolutionized bodybuilding and became an iconic actor and politician.",
         achievements: "7x Mr. Olympia, 5x Mr. Universe, Actor, and Politician.",
-        img: "images/arnold.jpg",
-        moreInfoLink: "detail-pages/arnold-details.html" 
+        img: "./images/arnold.jpg",
+        moreInfoLink: "#arnold" 
     },
     "Ronnie Coleman": {
         description: "An American professional bodybuilder regarded as one of the greatest in bodybuilding history.",
         achievements: "8x Mr. Olympia, Known as 'The King' of bodybuilding.",
-        img: "images/ronnie.png",
-        moreInfoLink: "detail-pages/ronnie-details.html" 
+        img: "./images/ronnie.png",
+        moreInfoLink: "#ronnie" 
     },
     "Chris Bumstead": {
         description: "A Canadian professional bodybuilder dominating the Classic Physique division.",
         achievements: "4x Classic Physique Mr. Olympia, Social Media Influencer.",
-        img: "images/cbum.jpg",
-        moreInfoLink: "detail-pages/cbum-details.html" 
+        img: "./images/cbum.jpg",
+        moreInfoLink: "#cbum" 
     }
 };
 
@@ -111,77 +111,61 @@ document.querySelectorAll('.gallery-img').forEach(img => {
         document.getElementById("modalDescription").textContent = bodybuilder.description;
         document.getElementById("modalAchievements").textContent = bodybuilder.achievements;
         
-        document.getElementById("modalViewMore").setAttribute("href", bodybuilder.moreInfoLink);
+        const viewMoreBtn = document.getElementById("modalViewMore");
+        viewMoreBtn.setAttribute("href", bodybuilder.moreInfoLink);
+        
+        document.getElementById("modalViewMore").addEventListener("click", () => {
+            const modal = document.querySelector('.modal');
+        
+            modal.classList.remove('show');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+        
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+        
+            document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+        });
+        
     });
 });
 
-// Nutriotion section 
-const buttons = document.querySelectorAll('.tab-btn');
-const contents = document.querySelectorAll('.content');
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        contents.forEach(content => content.style.display = 'none');
-            
-        button.classList.add('active');
-        const target = button.getAttribute('data-target');
-        document.getElementById(target).style.display = 'block';
-        });
+// Function to update the navigation bar based on the current route
+function updateNavLinks() {
+    const navlinks = document.querySelectorAll(".nav-link");
+
+    navlinks.forEach(navlink => {
+        navlink.classList.remove("nav-active");
     });
 
-// Nutrition and Calorie API
-document.getElementById('food-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const foodItem = document.getElementById('food-input').value.trim();
-    const resultsDiv = document.getElementById('nutrition-results');
+    const currentView = window.location.hash.replace("#", "") || "home";
 
-    if (!foodItem) {
-        resultsDiv.style.border = 'none';
-        resultsDiv.innerHTML = "Please enter a food item.";
-        return;
-    }
-
-    const apiKey = 'ba8efdfa2542be47cffa653ca365e24a'; 
-    const appId = 'acddd836';  
-
-    try {
-        const response = await fetch(`https://trackapi.nutritionix.com/v2/natural/nutrients`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-app-id': appId,
-                'x-app-key': apiKey,
-            },
-            body: JSON.stringify({ query: foodItem })
-        });
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch data from the API.");
+    navlinks.forEach(navlink => {
+        if (navlink.getAttribute("href").includes(currentView)) {
+            navlink.classList.add("nav-active");
         }
+    });
+}
 
-        const data = await response.json();
-        const food = data.foods[0];
+// Add click event listeners to all nav links to handle route changes
+document.querySelectorAll(".nav-link").forEach(navlink => {
+    navlink.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.hash = navlink.getAttribute("href").substring(1);
+        updateNavLinks();
+    });
+});
 
-        if (!food) {
-            resultsDiv.style.border = 'none';
-            resultsDiv.innerHTML = "No data available for the entered food item.";
-            return;
+// Close the mobile navbar when a link is clicked
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (navbarCollapse.classList.contains('show')) {
+            navbarToggler.click();
         }
-
-        resultsDiv.style.border = '2px solid white';
-        resultsDiv.innerHTML = `
-            <h3>${foodItem.toUpperCase()}</h3>
-            <p>Calories: ${food.nf_calories} kcal</p>
-            <p>Protein: ${food.nf_protein} g</p>
-            <p>Fats: ${food.nf_total_fat} g</p>
-            <p>Carbs: ${food.nf_total_carbohydrate} g</p>
-            <p>Serving Size: ${food.serving_qty} ${food.serving_unit}</p>
-        `;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        resultsDiv.style.border = 'none';
-        resultsDiv.innerHTML = "Failed to fetch data. Please try again.";
-    }
+    });
 });
 
 

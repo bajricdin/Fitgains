@@ -161,3 +161,72 @@ function generatePlan() {
             showToast("There was an error loading the workout plan. Please try again.", "red")
         });
 }
+
+// Nutriotion section 
+const buttons = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.content');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.style.display = 'none');
+            
+        button.classList.add('active');
+        const target = button.getAttribute('data-target');
+        document.getElementById(target).style.display = 'block';
+        });
+    });
+
+// Nutrition and Calorie API
+document.getElementById('food-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const foodItem = document.getElementById('food-input').value.trim();
+    const resultsDiv = document.getElementById('nutrition-results');
+
+    if (!foodItem) {
+        resultsDiv.style.border = 'none';
+        resultsDiv.innerHTML = "Please enter a food item.";
+        return;
+    }
+
+    const apiKey = 'ba8efdfa2542be47cffa653ca365e24a'; 
+    const appId = 'acddd836';  
+
+    try {
+        const response = await fetch(`https://trackapi.nutritionix.com/v2/natural/nutrients`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-app-id': appId,
+                'x-app-key': apiKey,
+            },
+            body: JSON.stringify({ query: foodItem })
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch data from the API.");
+        }
+
+        const data = await response.json();
+        const food = data.foods[0];
+
+        if (!food) {
+            resultsDiv.style.border = 'none';
+            resultsDiv.innerHTML = "No data available for the entered food item.";
+            return;
+        }
+
+        resultsDiv.style.border = '2px solid white';
+        resultsDiv.innerHTML = `
+            <h3>${foodItem.toUpperCase()}</h3>
+            <p>Calories: ${food.nf_calories} kcal</p>
+            <p>Protein: ${food.nf_protein} g</p>
+            <p>Fats: ${food.nf_total_fat} g</p>
+            <p>Carbs: ${food.nf_total_carbohydrate} g</p>
+            <p>Serving Size: ${food.serving_qty} ${food.serving_unit}</p>
+        `;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        resultsDiv.style.border = 'none';
+        resultsDiv.innerHTML = "Failed to fetch data. Please try again.";
+    }
+});

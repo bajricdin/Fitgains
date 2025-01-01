@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
+    background-color: black;
 }
 
 .font-size-controls button {
@@ -76,6 +76,8 @@ body {
     transform: scale(1.05);
     transition: 0.5s ease-out;
   }
+  
+
   
   /* Mobile Navbar */
   .mobile-navbar .navbar-toggler-icon {
@@ -168,7 +170,11 @@ body {
     padding-right: 35px;
   }
   
-
+/* Active Navbar Link */
+.nav-active {
+    color: #FF7B07;
+    font-weight: bold;
+}
 /* Hero Section */
 .carousel-item img{
     height: 90vh;

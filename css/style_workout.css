@@ -83,6 +83,7 @@ input, .form-control {
     width: 100%;
 }
 
+
 input.valid, .form-control.valid {
     border: 2px solid green;
 }
@@ -90,7 +91,13 @@ input.valid, .form-control.valid {
 input.invalid, .form-control.invalid {
     border: 2px solid red;
 }
-
+#food-input, .form-control{
+    border: 2px solid #ccc;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 14px;
+    width: 100%;
+}
 /* Button Styles */
 .btn {
     padding: 10px 20px;
