@@ -1,85 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="icon" type="image/x-icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style_about_us.css">
-</head>
-<body>
-     <!-- Navbar -->
-     <header>
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-          <div class="container-fluid center">
-            <!-- Desktop Navbar -->
-            <div class="desktop-navbar d-none d-lg-flex justify-content-center align-items-center w-100">
-              <!-- Left Links -->
-              <div class="navbar-left">
-                <ul class="navbar-nav d-flex">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="link-workout" href="workout-plan.html">Workout Plan</a>
-                  </li>
-                </ul>
-              </div>
-      
-              <!-- Centered Logo -->
-              <a class="navbar-brand" href="../index.html">
-                <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
-              </a>
-      
-              <!-- Right Links -->
-              <div class="navbar-right">
-                <ul class="navbar-nav d-flex">
-                  <li class="nav-item">
-                    <a class="nav-link" href="about-us-page.html">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" id="last-link" href="contact-page.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-      
-            <!-- Mobile Navbar -->
-            <div class="mobile-navbar d-lg-none">
-              <!-- Mobile Logo -->
-              <a class="navbar-brand" href="../index.html">
-                <img src="../images/logo.png" alt="Fitgains Logo" height="60" class="logo-img">
-              </a>
-      
-              <!-- Toggler Button -->
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-      
-              <!-- Collapsed Links -->
-              <div class="collapse navbar-collapse" id="navbar1">
-                <ul class="navbar-nav d-flex flex-column text-center">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="workout-plan.html">Workout Plan</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about-us-page.html">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact-page.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
-    <!--About Us Section -->
+ <head>
+  <link rel="stylesheet" href="css/style_about_us.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+ </head>
+ <!--About Us Section -->
     <article class="about-us-section">
         <div class="container my-5">
             <h1 class="section-title text-center mb-4">About Fitgains</h1>
@@ -113,7 +37,77 @@
             </div>
         </div>
     </article>
-
+    <section class="faq-section">
+      <div class="container">
+          <h2 class="section-title">FITGAINS FAQs</h2>
+          <div class="faq-cards">
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>What is Fitgains?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Fitgains is a fitness platform designed to help users create personalized workout plans based on their specific fitness goals, body type, and available equipment. Whether you're looking to build muscle, lose weight, or improve your overall fitness, Fitgains tailors workouts to your needs.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>How do I create a workout plan?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Simply fill out the form on our "Workout Plan" page with your age, fitness level, goals, and equipment availability. Our system will generate a customized workout plan for you, including exercises, sets, reps, and rest times.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Can Fitgains help me with nutrition advice?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Fitgains focuses primarily on fitness and workout plans. While we do not provide detailed nutrition plans, we offer general guidance on maintaining a balanced diet for your fitness goals. We recommend consulting a nutritionist for a more personalized meal plan.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Do I need an account to use Fitgains?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>No, you don't need an account to use Fitgains. Our platform allows you to generate workout plans without any registration or login. However, we may offer the option to save your workout plans in the future for easier access.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Can I adjust my workout plan later?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Absolutely! If you feel that a workout is too challenging or too easy, you can return to the "Workout Plan" page and make adjustments to your preferences. Fitgains will generate a new plan based on your updated input.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Is Fitgains suitable for beginners?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Yes! Fitgains caters to all fitness levels, from beginners to advanced athletes. When creating your workout plan, simply select your fitness level, and we will customize the plan to suit your experience and abilities.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Are there any costs associated with using Fitgains?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>Fitgains is currently free to use! Our goal is to provide accessible fitness solutions to anyone looking to improve their health and fitness. We may introduce premium features in the future, but the basic workout plan generator will always be free.</p>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-question" onclick="toggleAnswer(this)">
+                      <h3>Can I track my progress on Fitgains?</h3>
+                  </div>
+                  <div class="faq-answer">
+                      <p>While Fitgains currently focuses on generating workout plans, we encourage you to track your progress separately. You can record your workouts and monitor your improvements using fitness apps or journals.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
     <!-- Google Maps Section -->
     <section class="google-maps-section">
         <div class="container">
@@ -126,12 +120,5 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="text-white text-center py-3">
-        <p>IBU 061 - Foundations of Web Development | &copy; Fitgains | Created by Din Bajric</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-</body>
-</html>
+<script src="../js/about.js"></script>
+<script src="../js/script.js"></script>
