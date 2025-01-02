@@ -1,0 +1,27 @@
+[
+    {
+        "username": "din",
+        "password": "bajric"
+    },
+    {
+        "username": "amela",
+        "password": "vatres"
+    },
+    {
+        "username": "amila",
+        "password": "causevic"
+    },
+    {
+        "username": "ajla",
+        "password": "korman"
+    },
+    {
+        "username": "adnan",
+        "password": "hajro"
+    }
+    ,
+    {
+        "username": "admin",
+        "password": "admin"
+    }
+  ]

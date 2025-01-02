@@ -1,14 +1,14 @@
 (function($) {
- 
+
   $.spapp = function(options) {
 
     // set config and routes
     var config, routes = {};
 
     config = $.extend({
-      defaultView  : 'home',
+      defaultView  : 'login',
       templateDir  : './pages/',
-      pageNotFound : true
+      pageNotFound : false
     }, options );
 
     $("main#spapp > section").each(function(k, e) {

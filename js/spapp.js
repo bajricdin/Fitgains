@@ -1,7 +1,8 @@
 $(document).ready(function () {
     var app = $.spapp({
-        defaultView: "home",
+        defaultView: "login",
         templateDir  : './pages/',
+        onReady: login()
     });
 
     // Routes
@@ -22,7 +23,7 @@ $(document).ready(function () {
 
     app.route({
         view: "contactus",
-        load: "contact-page.html",
+        load: "contact-page.html"
     });
 
     app.route({
@@ -38,6 +39,16 @@ $(document).ready(function () {
     app.route({
         view: "cbum",
         load: "cbum-details.html"
+    });
+
+    app.route({
+        view: "login",
+        load: "login.html"
+    });
+
+    // Scrolls to top of the page insted of the page section
+    $(window).on("hashchange", function () {
+        window.scrollTo(0, 0);
     });
 
     app.run();

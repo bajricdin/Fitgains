@@ -4,6 +4,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.container{
+    max-width: 960px;
+}
+
 .hero-section {
     height: 60vh;
     color: #fff;
