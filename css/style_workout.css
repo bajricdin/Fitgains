@@ -17,17 +17,17 @@ h1, h2 {
 
 /* Form Section Styles */
 fieldset {
-    border: 5px solid #FF7B07;
+    border: 2px solid #444;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: black;
+    background-color: #444;
 }
 
 legend {
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: bold;
-    color: white;
+    color: #FF7B07;
     text-align: center;
 }
 
@@ -44,25 +44,11 @@ legend {
     margin: 8px 0;
     border-radius: 5px;
     border: 1px solid #222;
-    background-color: #222;
-    color: #fff;
-
 }
-
-.form-control::placeholder{
-    color: #666;
-}
-
 
 .form-select:focus, .form-control:focus {
     outline: none;
-    background-color: #222;
-    color: white;
     border-color: #2980b9;
-}
-
-.form-text{
-    color: #aaa;
 }
 
 .mb-3 {
@@ -73,37 +59,11 @@ input{
     background-color: black;
 }
 
-
-/* Borders for form validation */
-input, .form-control {
-    border: 2px solid #ccc;
-    padding: 8px;
-    margin: 8px 0;
-    font-size: 14px;
-    width: 100%;
-}
-
-
-input.valid, .form-control.valid {
-    border: 2px solid green;
-}
-
-input.invalid, .form-control.invalid {
-    border: 2px solid red;
-}
-#food-input, .form-control{
-    border: 2px solid #ccc;
-    padding: 8px;
-    margin: 8px 0;
-    font-size: 14px;
-    width: 100%;
-}
 /* Button Styles */
 .btn {
     padding: 10px 20px;
     background-color: #FF7B07;
-    color: black;
-    font-weight: 700;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -159,231 +119,15 @@ input.invalid, .form-control.invalid {
 
 .table th, .table td {
     padding: 12px;
-    border: 1px solid #FF7B07;
+    border: 1px solid #333;
     text-align: left;
-    background-color: black;
-    color: white;
 }
 
 .table th {
     background-color: #FF7B07;
-    color: black;
-    border: 1px solid #FF7B07;
-    text-transform: uppercase;
-    text-align: center;
+    color: #fff;
 }
 
-.table td:hover{
-    background-color: #FF7101;
-    transition: 0.4s ease-in-out;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-}
-
-.table th, .table td {
-    padding: 8px;
-    text-align: left;
-}
-
-@media (max-width: 768px) {
-    .table th, .table td {
-        font-size: 0.9rem; 
-        padding: 6px; 
-    }
-
-    .table button {
-        font-size: 0.8rem; 
-        padding: 5px 8px; 
-    }
-}
-/* Style for delete edit save buttons */
-.table td {
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-.table .th{
-    text-align: center;
-}
-.table th:last-child, 
-.table td:last-child {
-    text-align: center;
-    width: 120px;
-}
-
-.table td:last-child:hover {
-    background-color: black;
-}
-.table button {
-    padding: 6px 10px;
-    background-color: #FF7B07;
-    color: black;
-    font-weight: 700;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.table button:hover {
-    background-color: #3498db;
-}
-/* Nutrition section */
-.nutrition-tips {
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-    padding: 5px;
-    background-color: #FF7B07;
-    border-radius: 8px;
-    max-width: 900px;
-    text-align: center;
-}
-.nutrition-tips h2{
-    font-size: 2.3rem;
-}
-.tabs {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin: 20px 0;
-}
-.tab-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.tab-btn.active {
-    background-color:#FF7B07;
-    color: black;
-}
-.content {
-    background-color: black;
-    font-size: 1.2rem;
-    border: 2px white solid;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    color: white;
-}
-.content ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-@media (max-width: 768px) {
-    .nutrition-tips {
-        padding: 5px;
-        margin: 0 20px;
-    }
-    .tab-btn {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-    .content {
-        font-size: 1rem;
-        padding: 20px;
-        border: 1px solid white;
-    }
-}
-@media (max-width: 480px) {
-    .tab-btn {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-    .content {
-        font-size: 0.9rem;
-        margin: 0 20px;
-        padding: 20px;
-        border: 1px solid white;
-    }
-}
-
-/* Nutrition and Calories API */
-.nutrition-section {
-    text-align: center;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: black;
-    border-radius: 8px;
-    max-width: 900px;
-    border: 5px solid #FF7B07;
-}
-
-.nutrition-section h2 {
-    font-size: 2.3rem;
-    margin-top: 10px;
-    color: white;
-}
-.nutrition-section input[type="text"] {
-    display: block;
-    width: 95%; 
-    padding: 15px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: #222; 
-    border: 2px solid #FF7B07;
-    border-radius: 8px;
-    margin: 15px auto;
-    box-sizing: border-box;
-    text-align: center; 
-}
-
-.nutrition-section input[type="text"]::placeholder {
-    color: white;
-    opacity: 0.8;
-}
-
-.nutrition-section button {
-    background-color: #FF7B07;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.nutrition-section button:hover {
-    background-color: #e66900;
-}
-
-#nutrition-results {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    margin: 15px;
-}
-
-@media (max-width: 768px) {
-    .nutrition-section {
-        padding: 10px;
-        max-width: 90%;
-    }
-
-    .nutrition-section input[type="text"] {
-        font-size: 1rem;
-        padding: 10px;
-    }
-
-    .nutrition-section button {
-        font-size: 1rem;
-        padding: 8px 15px;
-    }
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }

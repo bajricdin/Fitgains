@@ -1,112 +1,78 @@
-// Select buttons
-const smallBtnDesktop = document.getElementById('font-small-desktop');
-const mediumBtnDesktop = document.getElementById('font-medium-desktop');
-const largeBtnDesktop = document.getElementById('font-large-desktop');
+// I generated this js code using ChatGPT so i can display table and use mock API for fetching data
 
-const smallBtnMobile = document.getElementById('font-small-mobile');
-const mediumBtnMobile = document.getElementById('font-medium-mobile');
-const largeBtnMobile = document.getElementById('font-large-mobile');
+function generatePlan() {
+    // Get form values
+    var age = document.getElementById('age').value;
+    var fitnessLevel = document.getElementById('fitnessLevel').value;
+    var goal = document.getElementById('goal').value;
+    var gender = document.getElementById('gender').value;
+    var weight = document.getElementById('weight').value;
+    var duration = document.getElementById('duration').value;
+    var days = document.getElementById('days').value;
+    var split = document.getElementById('split').value;
 
-function setFontSize(size) {
-  document.querySelectorAll('p').forEach((p) => {
-    p.style.fontSize = size;
-  });
-  localStorage.setItem('fontSize', size);
-  activateButtons(size);
+    // Ensure required fields are filled
+    if (!age || !fitnessLevel || !goal || !gender || !weight || !duration || !days || !split) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    // Show loader
+    document.getElementById('loader-container').classList.remove('d-none');
+
+    // Prepare the data to send
+    var formData = {
+        age: age,
+        fitnessLevel: fitnessLevel,
+        goal: goal,
+        gender: gender,
+        weight: weight,
+        duration: duration,
+        days: days,
+        split: split
+    };
+
+    // Send the data to the JSONPlaceholder API
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Hide loader
+            document.getElementById('loader-container').classList.add('d-none');
+
+            // Show workout plan table
+            document.getElementById('workoutPlanContainer').classList.remove('d-none');
+
+            // Add table rows based on generated plan
+            var tableBody = document.getElementById('workoutTableBody');
+            tableBody.innerHTML = ''; // Clear any previous rows
+
+            // Sample plan (this should be dynamically generated based on the form input)
+            var plan = [
+                { day: 'Day 1', workout: 'Push-Ups', repsSets: '3 sets of 10 reps' },
+                { day: 'Day 2', workout: 'Squats', repsSets: '4 sets of 12 reps' },
+                { day: 'Day 3', workout: 'Pull-Ups', repsSets: '3 sets of 8 reps' }
+            ];
+
+            // Loop to fill the table with generated workouts
+            plan.forEach(function (item) {
+                var row = document.createElement('tr');
+                row.innerHTML = `<td>${item.day}</td><td>${item.workout}</td><td>${item.repsSets}</td>`;
+                tableBody.appendChild(row);
+            });
+
+            // Log the API response (for testing purposes)
+            console.log("Response from API:", data);
+        })
+        .catch(error => {
+            // Hide loader
+            document.getElementById('loader-container').classList.add('d-none');
+            console.error("Error:", error);
+            alert("There was an error submitting the form. Please try again.");
+        });
 }
-
-// Activate correct buttons (desktop and mobile)
-function activateButtons(size) {
-  [smallBtnDesktop, mediumBtnDesktop, largeBtnDesktop, smallBtnMobile, mediumBtnMobile, largeBtnMobile].forEach((btn) => {
-    btn.classList.remove('active');
-  });
-
-  if (size === '14px') {
-    smallBtnDesktop.classList.add('active');
-    smallBtnMobile.classList.add('active');
-  } else if (size === '18px') {
-    mediumBtnDesktop.classList.add('active');
-    mediumBtnMobile.classList.add('active');
-  } else if (size === '32px') {
-    largeBtnDesktop.classList.add('active');
-    largeBtnMobile.classList.add('active');
-  }
-}
-
-
-const savedFontSize = localStorage.getItem('fontSize') || '14px';
-setFontSize(savedFontSize);
-
-smallBtnDesktop.addEventListener('click', () => setFontSize('14px'));
-mediumBtnDesktop.addEventListener('click', () => setFontSize('18px'));
-largeBtnDesktop.addEventListener('click', () => setFontSize('32px'));
-
-smallBtnMobile.addEventListener('click', () => setFontSize('14px'));
-mediumBtnMobile.addEventListener('click', () => setFontSize('18px'));
-largeBtnMobile.addEventListener('click', () => setFontSize('32px'));
-
-// Notifications
-function showToast(message, type) {
-    const toast = document.getElementById('toast');
-    const toastDanger = document.getElementById('toast-danger')
-    const toastMessage = document.getElementById('toast-message');
-    const toastMessageDanger = document.getElementById('toast-message-danger');
-    // If 2 notification pops out, first one dissapears and the latest one is visible
-    toast.classList.remove('show');
-    toastDanger.classList.remove('showDanger');
-
-    if (type === 'red'){
-        toastMessageDanger.textContent = message;
-        toastDanger.classList.add('showDanger');
-        
-        setTimeout(() => {
-            toastDanger.classList.remove('showDanger');
-        }, 3000);
-    }else if (type === 'green'){
-        toastMessage.textContent = message;
-        toast.classList.add('show');
-
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000);   
-    }   
-}
-
-// Function to update the navigation bar based on the current route
-function updateNavLinks() {
-    const navlinks = document.querySelectorAll(".nav-link");
-
-    navlinks.forEach(navlink => {
-        navlink.classList.remove("nav-active");
-    });
-
-    const currentView = window.location.hash.replace("#", "") || "home";
-
-    navlinks.forEach(navlink => {
-        if (navlink.getAttribute("href").includes(currentView)) {
-            navlink.classList.add("nav-active");
-        }
-    });
-}
-
-// Add click event listeners to all nav links to handle route changes
-document.querySelectorAll(".nav-link").forEach(navlink => {
-    navlink.addEventListener("click", function (e) {
-        e.preventDefault();
-        window.location.hash = navlink.getAttribute("href").substring(1);
-        updateNavLinks();
-    });
-});
-
-// Close the mobile navbar when a link is clicked
-document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    link.addEventListener('click', hideNavbarMobile);
-    function hideNavbarMobile(){
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-
-        if (navbarCollapse.classList.contains('show')) {
-            navbarToggler.click();
-        }
-    }});
-
